@@ -1,0 +1,14 @@
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import VueUniversalModal from 'vue-universal-modal';
+import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel';
+const app = createApp(App);
+app.use(router);
+app.use(VueUniversalModal, { teleportTarget: '#modals' });
+app.use(Carousel);
+app.mount('#app');
+app.component('Carousel', Carousel);
+app.component('Slide', Slide);
+app.component('Navigation', Navigation);
+app.component('Pagination', Pagination);
